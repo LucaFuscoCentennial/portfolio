@@ -139,3 +139,13 @@ border-right: 10px solid transparent;
 border-bottom: 10px solid #55676D;
 background-color: #55676D;
 }
+.myinfo{
+  font-family: 'Times New Roman', Times, serif;
+opacity: 80%;
+border: 1px solid black;
+background-color: #423f3f;
+opacity: 80%;
+width: 20%;
+text-align: center;
+margin: auto;
+}

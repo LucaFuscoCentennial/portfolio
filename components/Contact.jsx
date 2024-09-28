@@ -31,12 +31,18 @@ const Contact = () =>{
     }
 
     return(
-        <form className="contclass" onSubmit={() => {confirmation(); navigate()}}>
+  <form className="contclass" onSubmit={() => {confirmation(); navigate()}}>
           <h1>Contact us</h1> 
+          <div className="myinfo">
+            <h3>My contact information</h3>
+
+            <p>Email: lucafusco9@hotmail.com</p>
+            <p>Phone number: 416-963-8937</p>
+        </div>
           <br />
           <div className="card1">
           <p>Please enter your information if you wish to contact me! I will respond 
-            <br />within 24 hours
+            <br />as soon as I can
           </p>
           <br /> 
          <p>First name: </p><input type="text" value={fname} onChange={handleFname} required /><br />
@@ -49,9 +55,12 @@ const Contact = () =>{
          <br /><br />
          <input type="submit"></input>
           </div>
-          
 
+        
         </form>
+
+      
+        
     );
 };
 
