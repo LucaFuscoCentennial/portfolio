@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import { BrowserRouter as Router } from 'react-router-dom'
 import MainRouter from '../MainRouter';
+//COMP229-PORTFOLIO
 //Main app page
 //Luca Fusco
 //301165312
