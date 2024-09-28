@@ -122,3 +122,11 @@ opacity: 80%;
 width: 100%;
 height: 300%;
 }
+.logo{
+text-align: left;
+background-color: rgb(55, 24, 85);
+position: relative;
+margin: auto;
+font-style: italic;
+font-family: 'Times New Roman', Times, serif;
+}

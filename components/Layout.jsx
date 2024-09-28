@@ -8,6 +8,7 @@ export default function Layout(){
     return(
       <div>
         <nav className="navb">
+        <Link to="/"><a className="logo">LF</a></Link>
         <Link to="/" >Home</Link> 
         <Link to="/about" >About</Link>
         <Link to="/services" >Services</Link>
