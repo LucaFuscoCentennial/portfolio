@@ -9,7 +9,7 @@ const About = () =>{
         <div className="aboutdiv">
         <h1>About me</h1>
         <h3>Luca Fusco</h3>
-        <img src="./img/Luca.JPG" height={400} width={300}></img>
+        <img src="../img/Luca.jpg" height={400} width={300}></img>
         <p>Hello, I am Luca Fusco, I am a current student at Centennial College and I am in the 
         <br />third semester. Some of my hobbies are liking video games, watching sports, playing  
         <br />golf and learning languages. I am currently learning Japanese! I am looking to continously
