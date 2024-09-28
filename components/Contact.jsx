@@ -31,7 +31,7 @@ const Contact = () =>{
     }
 
     return(
-        <div className="contclass">
+        <form className="contclass" onSubmit={() => {confirmation(); navigate()}}>
           <h1>Contact us</h1> 
           <br />
           <div className="card1">
@@ -39,15 +39,15 @@ const Contact = () =>{
             <br />within 24 hours
           </p>
           <br /> 
-         <p>First name: </p><input type="text" value={fname} onChange={handleFname}></input><br />
-         <p>Last name: </p><input type="text" value={lname} onChange={handleLname}></input>
-         <p>Email: </p><input type="text" value={email} onChange={handleEmail}></input>
+         <p>First name: </p><input type="text" value={fname} onChange={handleFname} required /><br />
+         <p>Last name: </p><input type="text" value={lname} onChange={handleLname}required />
+         <p>Email: </p><input type="email" value={email} onChange={handleEmail} required/>
          <br /><br />
-         <button className="btn1" onClick={() => {confirmation(); navigate()}}>Submit</button>
+         <input type="submit"></input>
           </div>
           
 
-        </div>
+        </form>
     );
 };
 
