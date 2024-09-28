@@ -41,7 +41,11 @@ const Contact = () =>{
           <br /> 
          <p>First name: </p><input type="text" value={fname} onChange={handleFname} required /><br />
          <p>Last name: </p><input type="text" value={lname} onChange={handleLname}required />
+         <p>Phone Number: </p><input type="text" required />
          <p>Email: </p><input type="email" value={email} onChange={handleEmail} required/>
+         <p>Message: </p> <textarea required></textarea>
+
+         <p></p>
          <br /><br />
          <input type="submit"></input>
           </div>
