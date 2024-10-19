@@ -11,7 +11,15 @@ router.route('/api/contacts').get(contactsCntrl.findContacts)
 //get contact by id
 router.route('/api/contacts/:id').get(contactsCntrl.findContactById)
 
-//update user
+//update user by id
 router.route('/api/contacts/:id').put(contactsCntrl.updateContact)
+
+//delete users
+router.route('/api/contacts/').delete(contactsCntrl.removeContact)
+
+
+//delete user by id
+router.route('/api/contacts/:id').delete(contactsCntrl.removeContactById)
+
 
 module.exports = router;

@@ -27,7 +27,7 @@ const findContacts = async(req, res) =>{
     res.json(contacts)
 }
 
-//find all contacts
+//find all contacts by id
 const findContactById = async(req, res) =>{
     const contact = await Contact.findById(req.params.id);
    //if contact doesn't exist
@@ -43,7 +43,7 @@ const findContactById = async(req, res) =>{
 //update contact by id
 const updateContact = async(req, res)=>{
     try{
-       let contact = await Contact.findByIdAndUpdate(req.params.id, req.body, {new: true, runValidators: true})
+       let contact = await Contact.findByIdAndUpdate(req.params.id, req.body, {new: true})
        res.status(200).json({
         updated: contact
        })
@@ -54,5 +54,35 @@ const updateContact = async(req, res)=>{
 
 }
 
+//remove contacts by id
+const removeContact = async(req, res)=>{
+    try{
+        
+   
+    }catch(err){
+        return res.status(400).json({
+            error: err.message || "error"
+            }) 
+    }
+}
 
-module.exports = {createContact, findContacts, findContactById, updateContact}
+
+
+//remove contacts by id
+const removeContactById = async(req, res)=>{
+    try{
+        
+        const contacts = await Contact.findById(req.params.id);
+
+        console.log(contacts)
+        let deletedContact = await contacts.deleteOne()
+        res.json(deletedContact)
+    }catch(err){
+        return res.status(400).json({
+            error: err.message || "error"
+            }) 
+    }
+}
+
+
+module.exports = {createContact, findContacts, findContactById, updateContact, removeContact, removeContactById}
