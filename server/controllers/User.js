@@ -1,5 +1,6 @@
 const User = require('../models/User.js');
 
+
 //Post method to create user
 const createUser = async(req,res) => {
     const user = new User(req.body)
@@ -18,10 +19,10 @@ const createUser = async(req,res) => {
         })
     }
 }
-//update 
-const listAllUsers = async(req,res)=>{
+//select all users 
+const findUsers = async(req,res)=>{
     try{
-        let users = await User.find().select('name email updated created');
+        let users = await User.find();
         res.json(users);
     }
     catch(err){
@@ -31,38 +32,32 @@ const listAllUsers = async(req,res)=>{
     }
 }
 //find user by id
-const userByID = async(req,res,next,id)=>{
+const userByID = async(req,res)=>{
     try{
-        let user = await User.findById(id);
+        const user = await User.findById(req.params.id);
         if(!user)
             return res.status('400').json({
         error:"User doesn't exist"
         })
-    req.profile = user
-    next()
+
+        res.json(user)
+
     }
     catch(err){
         return res.status(400).json({
-            error:"Error Message"
+            error: err.message || "Error Message"
         })
     }
-}
-
-const read = (req,res) =>{
-    req.profile.hashed_password = undefined
-    req.profile.salt = undefined
-    return res.json(req.profile)
 }
 
 //Update user by id
 const updateUser = async(req,res) => {
     try{
-        let user = req.profile
-        user = extend(user,req.body)
-        user.updated = Date.now()
-        await user.save()
-
-        res.json(user)
+        //new : true makes it show the update change in user document
+        let user = await User.findByIdAndUpdate(req.params.id, req.body, {new: true})
+       res.status(200).json({
+        updated: user
+       })
     }
     catch(err)
     {
@@ -74,14 +69,13 @@ const updateUser = async(req,res) => {
 //Remove all users
 const removeUser = async(req,res) => {
     try{
-        const user = await Contact.findById(req.params.id);
-        let deletedUser = await user.deleteOne()
-        res.json(deletedUser)
+        let user = await User.deleteMany();
+        res.json(user)
     }
     catch(err)
     {
     return res.send(400).json({
-            error:"Error Message"
+            error: err.message || "Error Message"
         })   
     }
 }
@@ -101,4 +95,4 @@ const removeUserById = async(req,res) => {
     }
 }
 //export methods to router
-module.exports = {createUser, userByID, read, listAllUsers, removeUser, updateUser, removeUserById}
+module.exports = {createUser, userByID, findUsers, removeUser, updateUser, removeUserById}

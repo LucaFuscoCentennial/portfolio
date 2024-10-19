@@ -30,7 +30,6 @@ const findContacts = async(req, res) =>{
 //find all contacts by id
 const findContactById = async(req, res) =>{
     const contact = await Contact.findById(req.params.id);
-   //if contact doesn't exist
    try{
     //turn it into json
     res.json(contact)
@@ -57,7 +56,6 @@ const updateContact = async(req, res)=>{
 //remove all contacts
 const removeContact = async(req, res)=>{
     try{
-        //find all contacts
         let contacts = await Contact.deleteMany();
         res.json(contacts)
    
