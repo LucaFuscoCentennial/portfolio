@@ -54,10 +54,12 @@ const updateContact = async(req, res)=>{
 
 }
 
-//remove contacts by id
+//remove all contacts
 const removeContact = async(req, res)=>{
     try{
-        
+        //find all contacts
+        let contacts = await Contact.deleteMany();
+        res.json(contacts)
    
     }catch(err){
         return res.status(400).json({
