@@ -1,0 +1,152 @@
+/*
+Css page
+//COMP229-PORTFOLIO
+Luca Fusco
+September 28, 2024
+301165312
+*/
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+.navb{
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: black;
+  font-size: 35px;
+  width: 100%;
+  font-family: 'Times New Roman', Times, serif;
+  padding: 23px;
+
+}
+.navb a:hover{
+  color: orange;
+}
+.navb a{
+  color: white;
+  padding: 20px;
+}
+body{
+  color: white;
+
+}
+
+.homediv{
+font-family: 'Times New Roman', Times, serif;
+top: 0;
+right: 0;
+left: 0;
+position: absolute;
+margin-top: 5%;
+background-color: #0d0d0d;
+opacity: 80%;
+width: 100%;
+height: 100%;
+
+}
+.btn1{
+  background-color: orange;
+  color: white;
+}
+.btn1:hover{
+  background-color: lightgreen;
+}
+.btn1 a{
+  color: white;
+}
+.aboutdiv{
+  font-family: 'Times New Roman', Times, serif;
+top: 0;
+right: 0;
+left: 0;
+position: absolute;
+margin-top: 5%;
+padding: 20px;
+background-color: #0d0d0d;
+opacity: 80%;
+width: 100%;
+height: 100%;
+
+
+}
+.servclass{
+  font-family: 'Times New Roman', Times, serif;
+  top: 0;
+  right: 0;
+  left: 0;
+  position: absolute;
+  margin-top: 5%;
+  padding: 20px;
+  background-color: #0d0d0d;
+opacity: 80%;
+width: 100%;
+height: 200%;
+
+}
+.card1{
+  border: 4px, solid black;
+  padding: 5px;
+  background-color: #333333;
+  width: 50%;
+  text-align: center;
+ margin: auto;
+}
+.contclass{
+  font-family: 'Times New Roman', Times, serif;
+  top: 0;
+  right: 0;
+  left: 0;
+  position: absolute;
+  margin-top: 5%;
+  padding: 20px;
+  background-color: #0d0d0d;
+opacity: 80%;
+width: 100%;
+height: 150%;
+}
+.projectdiv{
+  font-family: 'Times New Roman', Times, serif;
+  top: 0;
+  right: 0;
+  left: 0;
+  position: absolute;
+  margin-top: 5%;
+  padding: 20px;
+  background-color: #0d0d0d;
+opacity: 80%;
+width: 100%;
+height: 300%;
+}
+.logo{
+position: static;
+font-style: italic;
+font-family: 'Times New Roman', Times, serif;
+width: 0;
+height: 0;
+border-left: 10px solid transparent;
+border-right: 10px solid transparent;
+border-bottom: 10px solid #55676D;
+background-color: #55676D;
+}
+.myinfo{
+  font-family: 'Times New Roman', Times, serif;
+opacity: 80%;
+border: 1px solid black;
+background-color: #423f3f;
+opacity: 80%;
+width: 20%;
+text-align: center;
+margin: auto;
+}
