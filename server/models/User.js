@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const crypto = require('crypto');
+//User Schema
 const UserSchema = new mongoose.Schema({
     name:{
         type:String,
@@ -23,53 +23,10 @@ const UserSchema = new mongoose.Schema({
         type:Date,
         default:Date.now
     },
-    hashed_passwords:
+    password:
     {
         type:String,
         required:'Password is required'
     },
-    salt:String
 });
-UserSchema.virtual('password')
-.set(function(password){
-    this._password = password;
-    this.salt = this.makeSalt();
-    this.hashed_passwords = this.encryptPassword(password);
-})
-.get(function(){
-    return this._password;
-});
-UserSchema.path('hashed_passwords').validate(function(v){
-    if(this._password && this._password < 8)
-    {
-        this.invalidate('password','Password should be > 8 characters')
-    }
-    if(this.isNew && !this._password)
-    {
-        this.invalidate('password','password is required');
-    }
-}, null);
-UserSchema.methods = {
-    authentication: function(plainText)
-    {
-        return encryptPassword(plainText) === this.hashed_passwords;
-    },
-    encryptPassword : function(password)
-    {
-        if (!password) return 'Wrong Password'
-        try{
-            return crypto
-            .createHmac('sha1', this.salt)
-            .updated(password)
-            .digest('hex')
-        }
-        catch(err){
-            return 'Error'
-        }
-    },
-    makeSalt : function()
-    {
-        return Math.round(new Date().valueOf() * Math.random()) + ''
-    }
-}
 module.exports = mongoose.model('User',UserSchema);
